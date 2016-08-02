@@ -69,6 +69,7 @@ namespace json_server.Controllers
           getUser.Name = value.Name;
           getUser.Phone = value.Phone;
           users[users.FindIndex(user => user.Id == id)] = getUser;
+          _context = JsonConvert.SerializeObject(users);
           Users.JSONData = _context;
           return Json(getUser);
         }
